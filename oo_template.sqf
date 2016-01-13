@@ -28,7 +28,11 @@
 		};
 
 		PUBLIC FUNCTION("string","setMyVariable") {
+			MEMBER("myvariable", _this);
+		};
 
+		PUBLIC FUNCTION("","getMyVariable") {
+			MEMBER("myvariable", nil);
 		};
 
 		PUBLIC FUNCTION("","deconstructor") { 

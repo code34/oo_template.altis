@@ -4,6 +4,14 @@
 
 		 sleep 2;
 
+		["setMyVariable", "MYSTRING"] call _template;
+
+		sleep 2;
+
+		 _string = "getMyVariable" call _template;
+
+		 sleep 2;
+
 		 ["delete", _template] call OO_TEMPLATE;
 
 
