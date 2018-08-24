@@ -21,21 +21,24 @@
 	#include "oop.h"
 
 	CLASS("OO_TEMPLATE")
-		PRIVATE VARIABLE("string","myvariable");
+		PRIVATE VARIABLE("string", "myvariable");
+		PRIVATE VARIABLE("code","this");
 
-		PUBLIC FUNCTION("string","constructor") { 
-
+		PUBLIC FUNCTION("","constructor") { 
+			DEBUG(#, "OO_TEMPLATE::constructor")
+			MEMBER("myvariable", "foo");
 		};
 
+		PUBLIC FUNCTION("","getThis") FUNC_GETVAR("this");
+		PUBLIC FUNCTION("","getMyVariable") FUNC_GETVAR("myvariable");
+
 		PUBLIC FUNCTION("string","setMyVariable") {
+			DEBUG(#, "OO_TEMPLATE::setMyVariable")
 			MEMBER("myvariable", _this);
 		};
 
-		PUBLIC FUNCTION("","getMyVariable") {
-			MEMBER("myvariable", nil);
-		};
-
 		PUBLIC FUNCTION("","deconstructor") { 
+			DELETE VARIABLE("this");
 			DELETE_VARIABLE("myvariable");
 		};
 	ENDCLASS;
