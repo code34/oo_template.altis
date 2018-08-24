@@ -38,7 +38,7 @@
 		};
 
 		PUBLIC FUNCTION("","deconstructor") { 
-			DELETE VARIABLE("this");
+			DELETE_VARIABLE("this");
 			DELETE_VARIABLE("myvariable");
 		};
 	ENDCLASS;
